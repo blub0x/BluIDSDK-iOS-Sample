@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LoginData" representedClassName=".LoginData" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+    </entity>
+    <entity name="LoginUserData" representedClassName=".LoginUserData" syncable="YES">
+        <attribute name="access_token" optional="YES" attributeType="String"/>
+        <attribute name="expires" optional="YES" attributeType="String"/>
+        <attribute name="expires_in" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <attribute name="issued" optional="YES" attributeType="String"/>
+        <attribute name="token_type" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="LoginUserDataAsData" representedClassName="LoginUserDataAsData" syncable="YES" codeGenerationType="class">
+        <attribute name="access_token" optional="YES" attributeType="Binary"/>
+        <attribute name="expires" optional="YES" attributeType="Binary"/>
+        <attribute name="expires_in" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="issued" optional="YES" attributeType="Binary"/>
+        <attribute name="tokken_type" optional="YES" attributeType="Binary"/>
+        <attribute name="userName" optional="YES" attributeType="Binary"/>
+    </entity>
+    <elements>
+        <element name="LoginUserData" positionX="-45" positionY="0" width="128" height="133"/>
+        <element name="LoginUserDataAsData" positionX="-45" positionY="45" width="128" height="133"/>
+        <element name="LoginData" positionX="-36" positionY="81" width="128" height="58"/>
+    </elements>
+</model>
