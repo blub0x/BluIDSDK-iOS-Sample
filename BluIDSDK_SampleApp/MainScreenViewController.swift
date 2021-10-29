@@ -299,8 +299,6 @@ class MainScreenViewController: UITableViewController{
                 }
             })
     }
-    @IBAction func onInRangeSwitchClicked(_ sender: UISwitch) {
-    }
     @IBAction func onInRangeStepperChanged(_ sender: UIStepper) {
         let power = Int(sender.value)
         m_inRangeLabel.text = "\(power)"

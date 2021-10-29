@@ -406,7 +406,7 @@
                                         <rect key="frame" x="0.0" y="359.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8He-XL-2JZ" id="7kA-Xj-q2d">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Transfer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rX-0O-x00">
@@ -1239,9 +1239,6 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Pc-7H-AcA">
                                                     <rect key="frame" x="268" y="6.5" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="onSmoothSwitchClicked:" destination="HlL-e0-LH3" eventType="valueChanged" id="q8B-Vz-78x"/>
-                                                    </connections>
                                                 </switch>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-70" minimumValue="-90" maximumValue="-20" translatesAutoresizingMaskIntoConstraints="NO" id="PCx-pH-iwS">
                                                     <rect key="frame" x="166" y="6" width="94" height="32"/>
