@@ -116,7 +116,10 @@ class MainScreenViewController: UITableViewController{
     @IBOutlet weak var m_inUseLEDColorButton: UIButton!
     @IBOutlet weak var m_factoryResetTableCell: UITableViewCell!
     @IBOutlet weak var m_environmentButton: UIButton!
-    
+    @IBOutlet weak var m_userIDText: UITextField!
+    @IBOutlet weak var m_syncCardsButton: UIButton!
+    @IBOutlet weak var m_syncPersonCardsByID: UITableViewCell!
+
     
     override func viewDidLoad() {
         if m_autoTransferDB.isOn() == true {
@@ -491,6 +494,35 @@ class MainScreenViewController: UITableViewController{
         }
     }
     
+    @IBAction func onEndEditUserID(_ sender: UITextField) {
+        view.endEditing(true)
+        
+    }
+    
+    @IBAction func onSyncPersonCardsByID(_ sender: UIButton) {
+        guard let userID = m_userIDText.text, !userID.isEmpty else {
+            CommonUtils.showMessage(view: self, title: "Invalid user ID", message: "User ID should be non empty")
+            return
+        }
+        let progressBar = CommonUtils.showProgressBar(view: self, message: "Fetching Person Cards")
+        m_BluIDSDKClient?.syncPersonCardsByID(userID:userID, onComplete: { (error, cards) in
+            CommonUtils.dismissProgressBar(progressBar: progressBar) {
+            if let error = error {
+                print(error)
+
+                    CommonUtils.showMessage(view: self, title: "Sync Person Cards By ID Failed Failed", message: "\(error)\n\(error.localizedDescription)")
+                return
+            }
+            guard let cards = cards else {
+                    CommonUtils.showMessage(view: self, title: "Sync Person Cards By ID Failed Failed", message: "Cards not found")
+                return
+            }
+                CommonUtils.showMessage(view: self, title: " Person Cards ", message: "Total cards: \(cards.count)")
+            return
+            }
+        })
+
+    }
     func onDeviceStateLEDColorChange(ledColorButton:UIButton, deviceState:DeviceState) {
         guard let selectedColor = ledColorButton.titleLabel?.text else {
             return
@@ -839,6 +871,8 @@ class MainScreenViewController: UITableViewController{
         DispatchQueue.main.async {
             self.m_userNameLabel.text = "(\(userName))"
             self.m_loginLabel.text = "Logout"
+            self.m_syncCardsButton.isEnabled = true
+            self.m_userIDText.isEnabled = true
         }
     }
     
@@ -847,6 +881,9 @@ class MainScreenViewController: UITableViewController{
             self.m_userNameLabel.text = ""
             self.m_loginLabel.text = "Login"
             self.m_BluIDSDKClient?.logout()
+            self.m_syncCardsButton.isEnabled = false
+            self.m_userIDText.isEnabled = false
+            
         }
     }
     
