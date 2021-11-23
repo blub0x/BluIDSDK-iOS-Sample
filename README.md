@@ -24,18 +24,27 @@ A sample iOS application for using BluID SDK
    • Xcode Deployment Target iOS 13 or above 
 
    • Swift 5.3 
+   
+   • CocoaPods 
 
 ## Setup Instructions
 
-1. Import BluIDSDK.framework in project
+1. Install pods in the project directory.
+
+```
+ cd [Project Directiry]
+ pod install
+```
+
+2. Import BluIDSDK.framework in project
 
    • Extract BluIDSDK.framework file from [here](https://github.com/blub0x/BluIDSDK-iOS-Sample/releases/tag/v1.42) and copy the same.  
 
    • Import BluIDSDK.framework file into your project.
 
-   ![BluIDSDK.framework file](https://blub0x.github.io/images/Embed_Framework.png) 
+   ![BluIDSDK.framework file](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Embed_Framework.png) 
 
-2. Configure iOS privacy permissions
+3. Configure iOS privacy permissions
 
    BluID SDK uses the phone's bluetooth adapter to discover nearby BluPOINT devices and interacts with them to perform operations.BluID SDK needs user consent      for Bluetooth permissions. Following are the keys needs to be added in project’s Info.plist
 
@@ -43,7 +52,7 @@ A sample iOS application for using BluID SDK
 
    • NSBluetoothPeripheralUsageDescription 
 
-3. Enable Background Modes
+4. Enable Background Modes
 
    BluID SDK needs permission to run in the background, which allows your application to seamlessly authenticate BluPOINT devices without opening the                application.         
 
@@ -53,21 +62,21 @@ A sample iOS application for using BluID SDK
 
    • Choose “+ Capabilities” option and select Background Modes
 
-   ![Capabilities](https://blub0x.github.io/images/Capabilites.png)
+   ![Capabilities](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Capabilites.png)
 
    • In Background Modes section, make sure to select option “Uses Bluetooth LE accessories” & “Background Processing”
 
-   ![Background Modes](https://blub0x.github.io/images/Background_Modes.png)
+   ![Background Modes](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Background_Modes.png)
 
    • In project info.plist, add the following key with bundle identifiers of BluID SDK & application. 
      
-    ◦	BGTaskSchedulerPermittedIdentifiers 
-	
+    ◦    BGTaskSchedulerPermittedIdentifiers 
+    
       ▪ com.blub0x.BluIDSDK 
-	
+    
       ▪ <application_bundle_identifier>
 
-   ![Background Task Scheduler](https://blub0x.github.io/images/Background_Task.png)
+   ![Background Task Scheduler](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Background_Task.png)
 
 ## BluID SDK Initialization
 
