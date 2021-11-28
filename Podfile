@@ -9,6 +9,7 @@ target 'BluIDSDK_SampleApp' do
   project "./BluIDSDK_SampleApp.xcodeproj"
   pod "CryptoSwift", "1.4.0"
   pod 'AYPopupPickerView', "1.2"
+  pod 'CocoaLumberjack/Swift', "3.7.2"
 end
 
 post_install do |installer|
