@@ -195,6 +195,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         m_environmentDB?.save(env: environment)
         m_BluIDSDKClient = bluIDSDK
         m_loginViewController?.setBluIDSDK(sdk: bluIDSDK)
+        m_tableViewController?.setBluIDSDK(sdk: bluIDSDK)
         m_mainScreenViewController?.setBluIDSDK(sdk: bluIDSDK)
         m_firmwareTableViewController?.setBluIDSDK(sdk: bluIDSDK)
         m_multipleDeviceUpdateViewController?.setBluIDSDK(sdk: bluIDSDK)

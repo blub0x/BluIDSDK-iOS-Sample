@@ -23,7 +23,7 @@ A sample iOS application for using BluID SDK
 
    • Xcode Deployment Target iOS 13 or above 
 
-   • Swift 5.3 
+   • Swift 5.4.2 or above
    
    • CocoaPods 
 
@@ -36,13 +36,13 @@ A sample iOS application for using BluID SDK
  pod install
 ```
 
-2. Import BluIDSDK.framework in project
+2. Open project (BluIDSDK.xcworkspace) in XCode and import BluIDSDK.xcframework in the project.
 
-   • Extract BluIDSDK.framework file from [here](https://github.com/blub0x/BluIDSDK-iOS-Sample/releases/tag/v1.42) and copy the same.  
+   • Extract BluIDSDK.xcframework file from [here](https://github.com/blub0x/BluIDSDK-iOS-Sample/releases/tag/v1.42) and copy the same.  
 
-   • Import BluIDSDK.framework file into your project.
+   • Import BluIDSDK.xcframework file into your project.
 
-   ![BluIDSDK.framework file](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Embed_Framework.png) 
+   ![BluIDSDK.xcframework file](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Embed_xcFramework.png) 
 
 3. Configure iOS privacy permissions
 
