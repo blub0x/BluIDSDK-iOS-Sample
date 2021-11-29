@@ -42,7 +42,7 @@ A sample iOS application for using BluID SDK
 
    • Import BluIDSDK.xcframework file into your project.
 
-   ![BluIDSDK.xcframework file](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Embed_xcFramework.png) 
+   ![BluIDSDK.xcframework file](images/Embed_xcFramework.png) 
 
 3. Configure iOS privacy permissions
 
@@ -62,11 +62,11 @@ A sample iOS application for using BluID SDK
 
    • Choose “+ Capabilities” option and select Background Modes
 
-   ![Capabilities](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Capabilites.png)
+   ![Capabilities](images/Capabilites.png)
 
    • In Background Modes section, make sure to select option “Uses Bluetooth LE accessories” & “Background Processing”
 
-   ![Background Modes](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Background_Modes.png)
+   ![Background Modes](images/Background_Modes.png)
 
    • In project info.plist, add the following key with bundle identifiers of BluID SDK & application. 
      
@@ -76,7 +76,7 @@ A sample iOS application for using BluID SDK
     
       ▪ <application_bundle_identifier>
 
-   ![Background Task Scheduler](https://github.com/blub0x/BluIDSDK-iOS-Sample/tree/main/images/Background_Task.png)
+   ![Background Task Scheduler](images/Background_Task.png)
 
 ## BluID SDK Initialization
 
