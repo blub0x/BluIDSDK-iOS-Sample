@@ -32,7 +32,7 @@ A sample iOS application for using BluID SDK
 1. Install pods in the project directory.
 
 ```
- cd [Project Directiry]
+ cd [Project Directory]
  pod install
 ```
 
