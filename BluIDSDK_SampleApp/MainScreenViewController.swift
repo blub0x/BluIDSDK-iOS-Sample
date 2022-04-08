@@ -434,7 +434,7 @@ class MainScreenViewController: UITableViewController{
             sender.isOn = false
             return
         }
-        m_generalUserSettings?.enableTapSetting = sender.isOn
+        m_generalUserSettings?.enableTap = sender.isOn
         m_BluIDSDKClient?.saveUserPreference(setting: m_generalUserSettings!)
     }
     @IBAction func onUserTwistToggled(_ sender: UISwitch) {
@@ -442,7 +442,7 @@ class MainScreenViewController: UITableViewController{
             sender.isOn = false
             return
         }
-        m_generalUserSettings?.enableTwistSetting = sender.isOn
+        m_generalUserSettings?.enableTwist = sender.isOn
         m_BluIDSDKClient?.saveUserPreference(setting: m_generalUserSettings!)
     }
     @IBAction func onUserInRangeToggled(_ sender: UISwitch) {
@@ -450,7 +450,7 @@ class MainScreenViewController: UITableViewController{
             sender.isOn = false
             return
         }
-        m_generalUserSettings?.enableRangeSetting = sender.isOn
+        m_generalUserSettings?.enableRange = sender.isOn
         m_BluIDSDKClient?.saveUserPreference(setting: m_generalUserSettings!)
     }
     @IBAction func onGestureSelection(_ sender: UIButton) {
@@ -505,7 +505,7 @@ class MainScreenViewController: UITableViewController{
             return
         }
         let progressBar = CommonUtils.showProgressBar(view: self, message: "Fetching Person Cards")
-        m_BluIDSDKClient?.syncPersonCardsByID(userID:userID, onComplete: { (error, cards) in
+        m_BluIDSDKClient?.syncPersonCardsByID(userID:userID, filter: .BluB0XMobile, onComplete: { (error, cards) in
             CommonUtils.dismissProgressBar(progressBar: progressBar) {
             if let error = error {
                 print(error)
@@ -567,9 +567,9 @@ class MainScreenViewController: UITableViewController{
     func setGeneralUserSettings(generalUserSettings:UserPreferences) {
         m_generalUserSettings = generalUserSettings
         DispatchQueue.main.async {
-            self.m_userTapSwitch.isOn = generalUserSettings.enableTapSetting
-            self.m_userTwistSwitch.isOn = generalUserSettings.enableTwistSetting
-            self.m_userInRangeSwitch.isOn = generalUserSettings.enableRangeSetting
+            self.m_userTapSwitch.isOn = generalUserSettings.enableTap
+            self.m_userTwistSwitch.isOn = generalUserSettings.enableTwist
+            self.m_userInRangeSwitch.isOn = generalUserSettings.enableRange
             self.m_vibrateSwitch.isOn = generalUserSettings.enableVibrate
         }
     }
