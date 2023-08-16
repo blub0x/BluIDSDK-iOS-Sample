@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21531EA663769270E92798BF /* libPods-BluIDSDK_SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D94AED3A91BE7177FB8131 /* libPods-BluIDSDK_SampleApp.a */; };
+		3E6C8496CCCFEB09AD4C78E7 /* Pods_BluIDSDK_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E75A1B9ADCA0CBC41A3F9A8 /* Pods_BluIDSDK_SampleApp.framework */; };
+		8B6D14782A8A624B00B5BBCC /* BluIDSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6D14762A8A622300B5BBCC /* BluIDSDK.xcframework */; };
+		8B6D14792A8A624B00B5BBCC /* BluIDSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6D14762A8A622300B5BBCC /* BluIDSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B8216EA27281D250014D562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8216E927281D250014D562 /* AppDelegate.swift */; };
 		8B8216EC27281D250014D562 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8216EB27281D250014D562 /* SceneDelegate.swift */; };
 		8B8216EE27281D250014D562 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8216ED27281D250014D562 /* ViewController.swift */; };
@@ -30,18 +32,16 @@
 		8B82172C27281DF20014D562 /* DiscoveredPeripheralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B82171627281DF20014D562 /* DiscoveredPeripheralCell.swift */; };
 		8B82172D27281DF20014D562 /* FirmwareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B82171727281DF20014D562 /* FirmwareTableViewCell.swift */; };
 		8B82172E27281DF20014D562 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B82171827281DF20014D562 /* constants.swift */; };
-		8BC4D17F27541A500018F2C8 /* BluIDSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC4D17E27541A4F0018F2C8 /* BluIDSDK.xcframework */; };
-		8BC4D18027541A500018F2C8 /* BluIDSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC4D17E27541A4F0018F2C8 /* BluIDSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8BC4D17A275415120018F2C8 /* Embed Frameworks */ = {
+		8B6D14592A8A156800B5BBCC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8BC4D18027541A500018F2C8 /* BluIDSDK.xcframework in Embed Frameworks */,
+				8B6D14792A8A624B00B5BBCC /* BluIDSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		7E363DE447745F6CFE8C08C1 /* Pods-BluIDSDK_SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluIDSDK_SampleApp.release.xcconfig"; path = "Target Support Files/Pods-BluIDSDK_SampleApp/Pods-BluIDSDK_SampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		7E75A1B9ADCA0CBC41A3F9A8 /* Pods_BluIDSDK_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluIDSDK_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6D14762A8A622300B5BBCC /* BluIDSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BluIDSDK.xcframework; path = framework/BluIDSDK.xcframework; sourceTree = "<group>"; };
 		8B8216E627281D250014D562 /* BluIDSDK_SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluIDSDK_SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8216E927281D250014D562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B8216EB27281D250014D562 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,8 +79,6 @@
 		8B82171627281DF20014D562 /* DiscoveredPeripheralCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveredPeripheralCell.swift; sourceTree = "<group>"; };
 		8B82171727281DF20014D562 /* FirmwareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmwareTableViewCell.swift; sourceTree = "<group>"; };
 		8B82171827281DF20014D562 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
-		8BC4D17E27541A4F0018F2C8 /* BluIDSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BluIDSDK.xcframework; path = framework/BluIDSDK.xcframework; sourceTree = "<group>"; };
-		A5D94AED3A91BE7177FB8131 /* libPods-BluIDSDK_SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BluIDSDK_SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E77F60F6B027139372D118 /* Pods-BluIDSDK_SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluIDSDK_SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-BluIDSDK_SampleApp/Pods-BluIDSDK_SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,8 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21531EA663769270E92798BF /* libPods-BluIDSDK_SampleApp.a in Frameworks */,
-				8BC4D17F27541A500018F2C8 /* BluIDSDK.xcframework in Frameworks */,
+				3E6C8496CCCFEB09AD4C78E7 /* Pods_BluIDSDK_SampleApp.framework in Frameworks */,
+				8B6D14782A8A624B00B5BBCC /* BluIDSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,8 +182,8 @@
 		8B821731272820B20014D562 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8BC4D17E27541A4F0018F2C8 /* BluIDSDK.xcframework */,
-				A5D94AED3A91BE7177FB8131 /* libPods-BluIDSDK_SampleApp.a */,
+				8B6D14762A8A622300B5BBCC /* BluIDSDK.xcframework */,
+				7E75A1B9ADCA0CBC41A3F9A8 /* Pods_BluIDSDK_SampleApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,7 +199,8 @@
 				8B8216E227281D250014D562 /* Sources */,
 				8B8216E327281D250014D562 /* Frameworks */,
 				8B8216E427281D250014D562 /* Resources */,
-				8BC4D17A275415120018F2C8 /* Embed Frameworks */,
+				8B6D14592A8A156800B5BBCC /* Embed Frameworks */,
+				94559D5CB64910DE4CC70FF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,6 +279,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94559D5CB64910DE4CC70FF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BluIDSDK_SampleApp/Pods-BluIDSDK_SampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BluIDSDK_SampleApp/Pods-BluIDSDK_SampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BluIDSDK_SampleApp/Pods-BluIDSDK_SampleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
