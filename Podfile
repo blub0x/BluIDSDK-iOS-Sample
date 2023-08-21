@@ -3,13 +3,13 @@ platform :ios, '13.0'
 
 target 'BluIDSDK_SampleApp' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_modular_headers!
+  use_frameworks!
 
   # Pods for BluIDSDK_SampleApp
   project "./BluIDSDK_SampleApp.xcodeproj"
   pod "CryptoSwift", "1.4.0"
   pod 'AYPopupPickerView', "1.2"
-  pod 'CocoaLumberjack/Swift', "3.7.2"
+  pod 'CocoaLumberjack/Swift', "3.8"
 end
 
 post_install do |installer|
