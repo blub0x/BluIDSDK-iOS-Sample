@@ -19,7 +19,7 @@ A sample iOS application for using BluID SDK
 
 5. Minimum Requirements
    
-   • Xcode 15.0 beta 5 (15A5209g) or above 
+   • Xcode 15.2 (15C500b) or above 
 
    • Xcode Deployment Target iOS 13 or above 
 
