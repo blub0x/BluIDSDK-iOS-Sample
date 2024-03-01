@@ -23,7 +23,7 @@ A sample iOS application for using BluID SDK
 
    • Xcode Deployment Target iOS 13 or above 
 
-   • Swift Swift 5.9 (5.9.0.124.4) or above
+   • Swift 5.9 (5.9.0.124.4) or above
    
    • CocoaPods 
 
