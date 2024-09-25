@@ -19,7 +19,7 @@ A sample iOS application for using BluID SDK
 
 5. Minimum Requirements
    
-   • Xcode 15.3 (15E204a) or above 
+   • Xcode 16.0 (16A242d) or above 
 
    • Xcode Deployment Target iOS 13.4 or above 
 
@@ -38,7 +38,7 @@ A sample iOS application for using BluID SDK
 
 2. Open project (BluIDSDK.xcworkspace) in XCode and import BluIDSDK.xcframework in the project.
 
-   • Extract BluIDSDK.xcframework file from [here](https://github.com/blub0x/BluIDSDK-iOS-Sample/releases/tag/v1.61) and copy the same.  
+   • Extract BluIDSDK.xcframework file from [here](https://github.com/blub0x/BluIDSDK-iOS-Sample/releases/tag/v1.62) and copy the same.  
 
    • Import BluIDSDK.xcframework file into your project.
 
