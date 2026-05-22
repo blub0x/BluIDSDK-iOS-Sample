@@ -51,6 +51,8 @@ class MainScreenViewController: UITableViewController{
     @IBOutlet weak var m_singleDeviceButton: UIButton!
     @IBOutlet weak var m_progressBar: UIProgressView!
     @IBOutlet weak var m_progressLabel: UILabel!
+    @IBOutlet weak var m_macInputText: UITextField!
+    @IBOutlet weak var m_macSetButton: UIButton!
     @IBOutlet weak var m_deviceNameButton: UIButton!
     @IBOutlet weak var m_deviceNameText: UITextField!
     @IBOutlet weak var m_bleStepper: UIStepper!
@@ -203,6 +205,21 @@ class MainScreenViewController: UITableViewController{
     @IBAction func onSingleDeviceFlash(_ sender: UIButton) {
         m_onGetFirmwareList?(nil)
     }
+    @IBAction func onMacSetSubmit(_ sender: UIButton) {
+        guard let mac = m_macInputText.text, CommonUtils.isMACFormat(macAddress: mac) else {
+            CommonUtils.showMessage(view: self, title: "Invalid MAC", message: "MAC should be hexadecimal with no ':' and 12 characters")
+            return
+        }
+        let progressBar = CommonUtils.showProgressBar(view: self, message: "Updating MAC")
+        m_BluIDSDKClient?.updateDeviceMacAddress(macAddress: mac, onResponse: { error in
+            CommonUtils.dismissProgressBar(progressBar: progressBar) {
+                if let error = error {
+                    CommonUtils.showMessage(view: self, title: "Failed", message: "MAC Update Failed\n\(error)")
+                    return
+                }
+            }
+        })
+    }
     @IBAction func onDeviceNameSubmit(_ sender: UIButton) {
         guard let name = m_deviceNameText.text, !name.isEmpty, name.count < 9 else {
             CommonUtils.showMessage(view: self, title: "Invalid Name", message: "Name should be upto 8 character and non empty")
@@ -266,6 +283,9 @@ class MainScreenViewController: UITableViewController{
         view.endEditing(true)
     }
     @IBAction func onEndNameEdit(_ sender: UITextField) {
+        view.endEditing(true)
+    }
+    @IBAction func OnEndEditing(_ sender: UITextField) {
         view.endEditing(true)
     }
     @IBAction func onTapSwitchClicked(_ sender: UISwitch) {
@@ -590,7 +610,7 @@ class MainScreenViewController: UITableViewController{
     
     func setSelectedDevice(device:Device_Information) {
         m_selectedDevice = device
-        guard let firmwareVersion = device.firmwareVersion,let tap = device.tapSettings, let twist = device.twistSettings, let range = device.rangeSettings, let appSpecific = device.appSpecificSettings, let wave = device.waveSettings, let ai = device.aiSettings, let appleWatch = device.appleWatchSettings, let BlueREMOTE = device.BluREMOTESettings, let enhancedTap = device.enhancedTapSettings else {
+        guard let firmwareVersion = device.firmwareVersion, let mac = device.macAddress, let tap = device.tapSettings, let twist = device.twistSettings, let range = device.rangeSettings, let appSpecific = device.appSpecificSettings, let wave = device.waveSettings, let ai = device.aiSettings, let appleWatch = device.appleWatchSettings, let BlueREMOTE = device.BluREMOTESettings, let enhancedTap = device.enhancedTapSettings else {
             self.m_selectedDeviceDetails.text = "\(device.name)"
             return
         }
@@ -600,6 +620,7 @@ class MainScreenViewController: UITableViewController{
         }
         DispatchQueue.main.async {
             self.m_selectedDeviceDetails.text = "\(device.name)\nv\(firmwareVersion)"
+            self.m_macInputText.text = mac.replacingOccurrences(of: ":", with: "")
             self.m_deviceNameText.text = device.name
             self.updateGestureUI(bleSettings: tap, label: self.m_tapLabel, toggle: self.m_tapSwitch, stepper: self.m_tapStepper)
             self.updateGestureUI(bleSettings: twist, label: self.m_twistLabel, toggle: self.m_twistSwitch, stepper: self.m_twistStepper)
@@ -631,6 +652,7 @@ class MainScreenViewController: UITableViewController{
     
     func setDeviceInfoInUI(deviceInfo:Device_Details) {
         DispatchQueue.main.async {
+            self.m_macInputText.text = deviceInfo.macAddress.replacingOccurrences(of: ":", with: "")
             self.m_deviceNameText.text = deviceInfo.name
         }
     }
@@ -655,6 +677,7 @@ class MainScreenViewController: UITableViewController{
             self.enableGeneralNavigations(true)
             self.hideProgressBar(isHidden: true)
             self.m_selectedDeviceDetails.text = "none"
+            self.m_macInputText.text = ""
             self.m_deviceNameText.text = ""
             self.m_bleStrengthLabel.text = ""
             self.m_inUseLEDColorButton.setTitle("", for: .normal)
@@ -908,6 +931,8 @@ class MainScreenViewController: UITableViewController{
         DispatchQueue.main.async {
             self.m_rebootButton.isEnabled = isEnabled
             self.m_disconnectButton.isEnabled = isEnabled
+            self.m_macInputText.isEnabled = isEnabled
+            self.m_macSetButton.isEnabled = isEnabled
             self.m_deviceNameText.isEnabled = isEnabled
             self.m_deviceNameButton.isEnabled = isEnabled
             self.m_bleStepper.isEnabled = isEnabled
